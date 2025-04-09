@@ -1,5 +1,6 @@
 const projects = [
   {
+    tab: "Rostov-on-Don, Admiral",
     city: "Rostov-on-Don LCD admiral",
     area: "81 m2",
     time: "3.5 months",
@@ -7,6 +8,7 @@ const projects = [
     image: "slide1.jpg"
   },
   {
+    tab: "Sochi Thieves",
     city: "Sochi Thieves",
     area: "105 m2",
     time: "4 months",
@@ -14,6 +16,7 @@ const projects = [
     image: "slide2.jpg"
   },
   {
+    tab: "Rostov-on-Don Patriotic",
     city: "Rostov-on-Don Patriotic",
     area: "93 m2",
     time: "3 months",
@@ -24,10 +27,24 @@ const projects = [
 
 const imageEl = document.getElementById("project-image");
 const infoEl = document.getElementById("project-info");
-const dots = document.querySelectorAll(".slider__dot");
-const tabs = document.querySelectorAll(".slider__tab");
+const dots = document.getElementById("dots");
+const tabs = document.getElementById("tabs");
 
 let currentIndex = 1;
+
+const createNav = (wrapper, className, content = false) => {
+  projects.forEach((elem, idx) => {
+    const span = document.createElement('span');
+    span.className = className;
+    span.dataset.index = idx;
+    span.innerText = content ? elem.tab : '';
+    wrapper.appendChild(span);
+  })
+}
+
+createNav(dots, 'slider__dot')
+createNav(tabs, 'slider__tab', true)
+
 
 function updateSlider(index) {
   const project = projects[index];
@@ -57,11 +74,11 @@ function updateSlider(index) {
     </div>
   `;
 
-  dots.forEach(dot => dot.classList.remove("slider__dot_active"));
-  dots[index].classList.add("slider__dot_active");
+  Array.from(dots.children).forEach(dot => dot.classList.remove("slider__dot_active"));
+  Array.from(dots.children)[index].classList.add("slider__dot_active");
 
-  tabs.forEach(tab => tab.classList.remove("slider__tab_active"));
-  tabs[index].classList.add("slider__tab_active");
+  Array.from(tabs.children).forEach(tab => tab.classList.remove("slider__tab_active"));
+  Array.from(tabs.children)[index].classList.add("slider__tab_active");
 
   currentIndex = index;
 }
@@ -76,14 +93,14 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   updateSlider(newIndex);
 });
 
-dots.forEach(dot => {
+Array.from(dots.children).forEach(dot => {
   dot.addEventListener("click", () => {
     const index = parseInt(dot.dataset.index);
     updateSlider(index);
   });
 });
 
-tabs.forEach(tab => {
+Array.from(tabs.children).forEach(tab => {
   tab.addEventListener("click", () => {
     const index = parseInt(tab.dataset.index);
     updateSlider(index);

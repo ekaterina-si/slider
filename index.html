@@ -14,11 +14,7 @@
 <body>
   <div class="container">
     <div class="slider">
-      <div class="slider__tabs">
-        <span class="slider__tab" data-index="0">Rostov-on-Don, Admiral</span>
-        <span class="slider__tab slider__tab_active" data-index="1">Sochi Thieves</span>
-        <span class="slider__tab" data-index="2">Rostov-on-Don Patriotic</span>
-      </div>
+      <div id="tabs" class="slider__tabs"></div>
 
       <div class="slider__content">
         <h2 class="slider__title">Completed<br>Projects</h2>
@@ -36,11 +32,7 @@
               <path fill-rule="evenodd" clip-rule="evenodd" d="M.948 5.968h40.508v1.34H.948v-1.34z" fill="#fff" />
             </svg>
           </button>
-          <div class="slider__dots">
-            <span class="slider__dot" data-index="0"></span>
-            <span class="slider__dot slider__dot_active" data-index="1"></span>
-            <span class="slider__dot" data-index="2"></span>
-          </div>
+          <div id="dots" class="slider__dots"></div>
           <button class="slider__button" id="nextBtn">
             <svg class="slider__arrow" xmlns="http://www.w3.org/2000/svg" width="42" height="14" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd" d="m35.045 0 6.638 6.638-6.638 6.638-.948-.948 5.691-5.69-5.69-5.69.947-.948z" fill="#fff" />
@@ -51,7 +43,7 @@
       </div>
 
       <div class="slider__image-container">
-        <img id="project-image" src="/images/slide1.jpg" alt="Project image" class="slider__image">
+        <img id="project-image" src="images/slide1.jpg" alt="Project image" class="slider__image">
       </div>
     </div>
   </div>
