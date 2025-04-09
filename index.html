@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Yeseva+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="slider">
+      <div class="slider__tabs">
+        <span class="slider__tab" data-index="0">Rostov-on-Don, Admiral</span>
+        <span class="slider__tab slider__tab_active" data-index="1">Sochi Thieves</span>
+        <span class="slider__tab" data-index="2">Rostov-on-Don Patriotic</span>
+      </div>
+
+      <div class="slider__content">
+        <h2 class="slider__title">Completed<br>Projects</h2>
+        <p class="slider__description">
+          Only a small part of the work performed by our company is presented on the site.
+          For 14 years on in the construction market we have made happy more than 1000 families
+        </p>
+
+        <div class="slider__info" id="project-info"></div>
+
+        <div class="slider__controls">
+          <button class="slider__button" id="prevBtn">
+            <svg class="slider__arrow" xmlns="http://www.w3.org/2000/svg" width="42" height="14" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.638 13.276 0 6.638 6.638 0l.948.948-5.69 5.69 5.69 5.69-.948.948z" fill="#fff" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M.948 5.968h40.508v1.34H.948v-1.34z" fill="#fff" />
+            </svg>
+          </button>
+          <div class="slider__dots">
+            <span class="slider__dot" data-index="0"></span>
+            <span class="slider__dot slider__dot_active" data-index="1"></span>
+            <span class="slider__dot" data-index="2"></span>
+          </div>
+          <button class="slider__button" id="nextBtn">
+            <svg class="slider__arrow" xmlns="http://www.w3.org/2000/svg" width="42" height="14" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="m35.045 0 6.638 6.638-6.638 6.638-.948-.948 5.691-5.69-5.69-5.69.947-.948z" fill="#fff" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M40.736 7.308H.227v-1.34h40.508v1.34z" fill="#fff" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="slider__image-container">
+        <img id="project-image" src="/images/slide1.jpg" alt="Project image" class="slider__image">
+      </div>
+    </div>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
